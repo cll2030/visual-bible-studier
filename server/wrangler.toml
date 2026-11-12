@@ -1,0 +1,20 @@
+name = "visual-bible-studier"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# The shared study library. `npm run setup` creates it and fills in the id.
+[[kv_namespaces]]
+binding = "LIBRARY"
+id = "REPLACE_WITH_KV_ID"
+
+[vars]
+# Which Claude model writes studies. "claude-sonnet-5-5" costs about half as much.
+MODEL = "claude-opus-5-5"
+# New studies allowed per calendar month. Studies already in the library are always free to open.
+MONTHLY_STUDY_LIMIT = "60"
+# Web addresses allowed to use this server.
+ALLOWED_ORIGINS = "https://cll2030.github.io,http://localhost:8080"
+
+# Secrets, set with `npx wrangler secret put NAME` (never written in this file):
+#   ANTHROPIC_API_KEY   your key from the Claude Console
+#   FAMILY_PASSCODE     the passcode family members type into the app

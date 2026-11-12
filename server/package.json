@@ -1,0 +1,14 @@
+{
+  "name": "visual-bible-studier-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "node setup.mjs",
+    "deploy": "wrangler deploy",
+    "seed": "node seed.mjs && wrangler kv bulk put seed/bulk.json --binding LIBRARY --remote",
+    "dev": "wrangler dev --port 8787"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
